@@ -28,7 +28,7 @@ class Container extends React.Component {
         }
         return response.text();
       }).then((text) => { this.update(ep, text.split('\n')[0].trim())})
-      .catch((error) => { this.setError(ep)});
+      .catch((error) => { console.log(error) });
       }
     setTimeout(this.acquire, config.pollTime);
   }
