@@ -17,9 +17,10 @@ module.exports = {
      'process.env.NODE_ENV': JSON.stringify('development')
     }),
     new CopyWebpackPlugin([
-      { from: 'app/app.js', to: 'app.js'},
-      { from: 'app/index.html', to: 'index.html'},
+      { from: 'app/app.js',     to: 'app.js'     },
+      { from: 'app/index.html', to: 'index.html' },
       { from: 'app/global.css', to: 'global.css' },
+      { from: 'app/server.js',  to: 'server.js'  },
     ])
   ],
   module: {

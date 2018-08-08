@@ -9,11 +9,12 @@ class ClusterStatus extends React.Component {
 
   render() {
     return (
-      <div className={'cluster'}>
+      <div className={'cluster'} style={{'padding':'25px 0'}}>
         <div className={'header'} style={{'width':'100%', 'textAlign':'center'}}>
           <h1 style={{'color': '#FAFAFA'}}>{this.props.endpoint}</h1>
+          <p style={{'display': this.props.status ? 'none' : 'initial', 'textAlign': 'center', 'color': '#FAFAFA'}}>Host Unreachable</p>
         </div>
-        <TrafficLight status={this.props.status} size={'50px'}/>
+        {this.props.status && <TrafficLight status={this.props.status} size={'50px'}/> }
       </div>
     );
   }

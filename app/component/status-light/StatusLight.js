@@ -12,7 +12,11 @@ class StatusLight extends React.Component {
   }
 
   pickColor = () => {
-    return presets[this.props.color] ? presets[this.props.color] : this.props.color
+    return presets[this.props.color] ? presets[this.props.color] : this.props.color;
+  }
+
+  calculateOpacity = () => {
+    return this.props.active ? '1.0' : '0.5'
   }
 
   calculateShadow = (color) => {
@@ -26,8 +30,9 @@ class StatusLight extends React.Component {
       'width': this.props.size,
       'height': this.props.size,
       'backgroundColor': color,
+      'borderRadius': '50%',
       'boxShadow': this.calculateShadow(color),
-      'borderRadius': '50%'
+      'opacity': this.calculateOpacity()
     };
     return style;
   }
